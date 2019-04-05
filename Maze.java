@@ -69,18 +69,18 @@ public class Maze
                     System.out.println("You have no idea where you're going"); // Invalid direction.
             }
             
-            if(currentRow < 0 || currentCol < 0
-                || currentRow >= grid.length || currentCol >= grid[currentRow].length)
+            if(Row < 0 || Col < 0
+                || Row >= grid.length || Col >= grid[Row].length)
             {
                 done = true;
                 System.out.println("You fall into the chasm of doom"); // Out of bounds.
             }
             else
             {
-            switch(grid[currentRow][currentCol])
+            switch(grid[Row][Col])
 	    {
 		    caseMaze.EMPTY:
-			    grid[currentRow][currentCol]=Maze.VISITED;
+			    grid[Row][Col]=Maze.VISITED;
 		    break;
                     caseMaze.WALL:
 			    System.out.println("Youstumbleblindlyintoasolidconcretewall.");
