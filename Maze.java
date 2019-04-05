@@ -69,24 +69,24 @@ public class Maze
                     System.out.println("You have no idea where you're going"); // Invalid direction.
             }
             
-            if(currentRow < 0 || currentCol < 0
-                || currentRow >= grid.length || currentCol >= grid[currentRow].length)
+            if(Row < 0 || Col < 0
+                || Row >= grid.length || Col >= grid[Row].length)
             {
                 done = true;
                 System.out.println("You fall into the chasm of doom"); // Out of bounds.
             }
             else
             {
-                if(grid[currentRow][currentCol] == Maze.EMPTY)
+                if(grid[Row][Col] == Maze.EMPTY)
                 {
-                    grid[currentRow][currentCol] = Maze.VISITED;
+                    grid[Row][Col] = Maze.VISITED;
                 }
-                else if(grid[currentRow][currentCol] == Maze.WALL)
+                else if(grid[Row][Col] == Maze.WALL)
                 {
                     done = true;
                     System.out.println("You stumble blindly into a solid concrete wall"); // Hit wall.
                 }
-                else if(grid[currentRow][currentCol] == Maze.END)
+                else if(grid[Row][Col] == Maze.END)
                 {
                     done = true;
                     solved = true;
